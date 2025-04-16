@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>座位号查询</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>欢迎参加光大光学20周年庆典！</h1>
+        <p>请输入您的姓名以查询座位号：</p>
+        <input type="text" id="nameInput" placeholder="请输入您的姓名">
+        <button onclick="findSeat()">查询</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        // 模拟座位分配数据
+        const seatingData = {
+            吴嘉凤: "V30桌",
+            阮冠豪: "V30桌",
+            董鸿卫: "V30桌",
+            王霞: "V30桌",
+            孙德权: "11号桌",
+            钟杰: "V30桌",
+            曾林: "11号桌",
+            李子豪: "11号桌",
+            郑光东: "11号桌",
+            蔡森: "V30桌",
+            杨永华: "V30桌",
+            吴四明: "V30桌",
+            蒙圣和: "V30桌",
+            李盛富: "11号桌",
+            舒文海: "11号桌",
+            郑丽: "11号桌",
+            扶珈羽: "11号桌",
+            张和蓉: "良5桌"
+        };
+
+        function findSeat() {
+            const name = document.getElementById('nameInput').value.trim();
+            const resultDiv = document.getElementById('result');
+
+            if (seatingData[name]) {
+                resultDiv.textContent = `您的座位号是: ${seatingData[name]}`;
+            } else {
+                resultDiv.textContent = '未找到您的座位信息，请确认姓名是否正确。';
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
